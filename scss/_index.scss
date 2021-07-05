@@ -1,0 +1,151 @@
+*{
+    box-sizing: border-box;
+    position: relative;
+}
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #2C2937;
+}
+
+h1{
+    font-size: 24px;
+    line-height: 36px;
+    @include mobile{
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+h2{
+    font-size: 20px;
+    line-height: 30px;
+    @include mobile{
+        font-size: 16px;
+        list-style: 24px;
+    }
+}
+
+p{
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 10%;
+}
+
+.video{
+    max-width: 1110px;
+    height: auto;
+    @include mobile{
+        height: auto;
+    }
+}
+
+
+.banner{
+    height: 680px;
+    background-size: cover;
+    background-position: center;
+    &::before{
+        @include filter
+    }
+    
+    .logo{
+        width: 180px;
+    }
+    .qrCode{
+        width: 100px;
+        height: 100px;
+        background-image: url('../image/line.svg');
+        background-size: cover;
+        background-position: center;
+    }
+    .icon-arrowDown{
+        font-size: 48px;
+        animation: flash 1s infinite linear;
+    }
+    
+    @keyframes flash{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+}
+
+.font-TrainOne{
+    font-family: 'Train One', cursive;
+}
+
+
+// キーボートの仕様
+th, td{
+    border-bottom: solid 1px #333;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 5px 10px;
+    text-align: left;
+}
+th{
+    font-weight: 500;
+}
+td{
+    word-break: break-all;
+}
+
+// footer
+.footer{
+    height: 120px;
+    font-size: 24px;
+}
+
+/* ---$registerButton--- */
+.register{
+    position: fixed;
+    z-index: 100;
+
+    bottom: 40px;
+    right: 40px;
+    opacity: 0;
+
+    a{
+        h3{
+            font-size: 10px;
+            font-family: 'Roboto', sans-serif;
+            line-height: 20px;
+        }
+    }
+}
+.circle{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #00C300;
+
+    img{
+        width: 40px;
+        height: 40px;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+// utilities
+.py-40{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.py-20{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.invert{
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+.bg-dark{
+    background-color: #2C2937;
+}
